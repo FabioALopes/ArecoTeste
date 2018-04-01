@@ -1,0 +1,6 @@
+Para utilizar o projeto, por favor, instale o servidor de banco de dados Firebird.
+Ele pode ser obtido em https://firebirdsql.org/en/firebird-3-0/
+Selecione a opção mais adequada ao seu SO e faça o download.
+Execute o setup de instalação como "Administrador".
+Durante a execução do setup instalação, apenas confirme cada passo, mantendo das opções padrão.
+Após finalizar a instalação, poderá executar o Areco.exe normalmente.
