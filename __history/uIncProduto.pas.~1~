@@ -60,17 +60,11 @@ end;
 procedure TIncProduto.IncluirProduto;
 var vValor: Double;
 begin
-  if not TryStrtoFloat(edtValor.Text, vValor) then
-  begin
-    MessageDlg('Informe um valor válido!', mtError, [mbok], 0);
-    Exit;
-  end;
-
   Try
     Produto:= TProduto.Create;
     Produto.Codigo := edtCodigo.Text;
     Produto.Descricao := edtDescricao.Text;
-    Produto.Valor:= vValor;
+    if TryStrtoFloat(edtValor.Text, vValor) then Produto.Valor:= vValor Else Produto.Valor := 0;
     Produto.CodigoBarras := edtCodigoBarras.Text;
     Produto.Observacoes := edtObservacoes.Text;
     Produto.DataCadastro := Date;
@@ -85,18 +79,12 @@ end;
 procedure TIncProduto.AlterarProduto;
 var vValor: Double;
 begin
-  if not TryStrtoFloat(edtValor.Text, vValor) then
-  begin
-    MessageDlg('Informe um valor válido!', mtError, [mbok], 0);
-    Exit;
-  end;
-
   Try
     Produto:= TProduto.Create;
     Produto.ID := vID;
     Produto.Codigo := edtCodigo.Text;
     Produto.Descricao := edtDescricao.Text;
-    Produto.Valor:= vValor;
+    if TryStrtoFloat(edtValor.Text, vValor) then Produto.Valor:= vValor Else Produto.Valor := 0;
     Produto.CodigoBarras := edtCodigoBarras.Text;
     Produto.Observacoes := edtObservacoes.Text;
 

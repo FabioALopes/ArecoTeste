@@ -70,7 +70,7 @@ begin
     Produto:= TProduto.Create;
     Produto.Codigo := edtCodigo.Text;
     Produto.Descricao := edtDescricao.Text;
-    Produto.Valor:= vValor;
+    Produto.Valor:= vValor
     Produto.CodigoBarras := edtCodigoBarras.Text;
     Produto.Observacoes := edtObservacoes.Text;
     Produto.DataCadastro := Date;

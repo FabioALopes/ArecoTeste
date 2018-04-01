@@ -72,7 +72,6 @@ begin
   if IncProduto = nil then
     Application.CreateForm(TIncProduto, IncProduto);
   IncProduto.vID:= 0; // Inclusão
-  IncProduto.edtValor.Text:= '0,00';
   Try
     IncProduto.ShowModal;
   Finally
