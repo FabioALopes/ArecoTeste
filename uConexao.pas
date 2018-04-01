@@ -25,6 +25,10 @@ constructor TConexao.Create;
   begin
     Result:= ExtractFilePath(Application.ExeName) + 'ARECO.FDB';
   end;
+  function GetLibraryBD: String;
+  begin
+    Result:= ExtractFilePath(Application.ExeName) + 'FBCLIENT.DLL';
+  end;
 
 begin
   try
@@ -37,6 +41,7 @@ begin
     FConexao.Password       := 'masterkey';
     FConexao.Protocol       := 'firebird-3.0';
     FConexao.LoginPrompt    := False;
+    FConexao.LibLocation := GetLibraryBD;
     FConexao.Connect;
   except
     Raise;

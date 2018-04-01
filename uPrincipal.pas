@@ -85,10 +85,7 @@ procedure TPrincipal.AtualizarCadastro;
 begin
   Try
     Produto:= TProduto.Create;
-//    if edtPesquisa.Text <> '' then
-      DataSource1.DataSet:= Produto.ConsultarProduto(edtPesquisa.Text);
-//    Else
-//      DataSource1.DataSet:= Produto.ConsultarProduto('');
+    DataSource1.DataSet:= Produto.ConsultarProduto(edtPesquisa.Text);
     TFloatField(DataSource1.DataSet.FieldByName('VALOR')).DisplayFormat:= '#,##0.00';
   Finally
     FreeAndNil(Produto);
